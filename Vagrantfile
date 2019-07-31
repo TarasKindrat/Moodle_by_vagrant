@@ -35,8 +35,7 @@ end
 
 
 Vagrant.configure("2") do |config|
-  #config.vm.provision "shell", inline: "echo Hello"
-   
+     
    config.vm.define "db" do |db|
     db.vm.provision "shell", inline: <<-SHELL
         sudo yum update -y   
@@ -67,7 +66,6 @@ Vagrant.configure("2") do |config|
         sudo yum -y install epel-release yum-utils
         sudo yum-config-manager --disable remi-php54  
         sudo yum-config-manager --enable remi-php73
-        #sudo yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-intl
         sudo yum -y install php php-common php-intl php-zip php-soap php-xmlrpc php-opcache php-mbstring php-gd php-curl php-mysql php-xml 
         sudo systemctl restart httpd
     SHELL

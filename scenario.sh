@@ -21,8 +21,7 @@ sudo cat <<EOF > /etc/httpd/conf.d/moodle.conf
     DocumentRoot /var/www/html/moodle
     ServerName moodle.local
     ServerAlias www.moodle.local
-    #ServerAlias 192.168.200.12
-    Alias /moodle ì/var/www/html/moodle/î
+    Alias /moodle ‚Äú/var/www/html/moodle/‚Äù
     <Directory /var/www/html/moodle>
         Options SymLinksIfOwnerMatch
        AllowOverride All
@@ -44,13 +43,10 @@ sudo chown -R apache:apache /var/moodle/data
 cd /var/www/html
 
 echo "Downloading Moodle" 
-#sudo git clone https://github.com/moodle/moodle.git .
+
 sudo git clone -b MOODLE_36_STABLE git://git.moodle.org/moodle.git 
 
 echo "Installing Moodle cli mode"
-
-#sudo chown -R apache:apache /var/www/html/moodle
-# --wwwroot="http://moodle.local/"\
 
 sudo /usr/bin/php  moodle/admin/cli/install.php --lang="en"\
 	--wwwroot="http://moodle.local"\

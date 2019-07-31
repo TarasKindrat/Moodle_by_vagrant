@@ -48,8 +48,3 @@ echo "restarting mariadb "
 
 sudo systemctl restart mariadb
 
-
-#GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON $dbname.* TO "$moodleuser"@"$host_to_db" IDENTIFIED BY "$moodlepassword";
-#set global innodb_file_format = `BARRACUDA`;
-#set global innodb_large_prefix = `ON`;
-#set Global innodb_file_per_table = 1;

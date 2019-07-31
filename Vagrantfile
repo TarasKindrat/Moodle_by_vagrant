@@ -57,11 +57,12 @@ Vagrant.configure("2") do |config|
         sudo yum install -y git 
         sudo echo "starting httpd"
         sudo systemctl start httpd.service
-        # To make sure if Apache server is running
+        # Make sure if Apache server is running
         sudo systemctl status httpd 
-        sudo systemctl enable httpd.service  # to do is enable Apache to start on boot     
+        # Enable Apache to start on boot         
+        sudo systemctl enable httpd.service      
         
-        # To install PHP 7.3 and its libraries:
+        # Install PHP 7.3 and its libraries:
         sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm 
         sudo yum -y install epel-release yum-utils
         sudo yum-config-manager --disable remi-php54  
